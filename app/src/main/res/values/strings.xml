@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Scrumister</string>
+    <string name="title_activity_add_screen">AddScreen</string>
 </resources>

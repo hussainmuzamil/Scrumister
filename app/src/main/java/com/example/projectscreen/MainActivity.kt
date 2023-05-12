@@ -1,5 +1,6 @@
 package com.example.projectscreen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val itemList = DataSource.getItems()
-
+        val scrumList = getScrumModelData()
+        val itemList = DataSource.getItems(scrumList[0])
         adapterList.updateList(itemList)
 
         binding.RecyclerView.apply {
@@ -39,6 +40,15 @@ class MainActivity : AppCompatActivity() {
 //        val layoutManager = LinearLayoutManager(applicationContext)
 //        recyclerView.layoutManager = layoutManager
 //        recyclerView.adapter = customAdapter
+        var intent = Intent(this@MainActivity,AddScreen::class.java)
+        startActivity(intent)
+    }
+
+    private fun getScrumModelData(): List<ScrumModel> {
+        val itemList =  arrayListOf<ScrumModel>()
+        itemList.add(ScrumModel("Design", arrayListOf("Cathy","Daisy","Simon","Jonathon"),10,"Teal"))
+        itemList.add(ScrumModel("Development", arrayListOf("Muzamil","Rafay"),10,"Orange"))
+        return itemList
     }
 //    fun getItems(){
 //        arrayList.add("Item 1")
