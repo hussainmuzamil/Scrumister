@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 //        val layoutManager = LinearLayoutManager(applicationContext)
 //        recyclerView.layoutManager = layoutManager
 //        recyclerView.adapter = customAdapter
-        var intent = Intent(this@MainActivity,AddScreen::class.java)
+        var intent = Intent(this@MainActivity,StartMeeting::class.java)
         startActivity(intent)
     }
 

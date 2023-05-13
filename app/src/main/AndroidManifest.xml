@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ProjectScreen"
         tools:targetApi="31">
         <activity
+            android:name=".StartMeeting"
+            android:exported="false" />
+        <activity
             android:name=".AddScreen"
             android:exported="false"
             android:label="@string/title_activity_add_screen"
